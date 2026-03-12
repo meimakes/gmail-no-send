@@ -66,7 +66,9 @@ client.create_draft(to="a@b.com", subject="Hi", body="Hello")
 
 - This tool **prevents sending in its own code**.
 - It does **not** prevent a user from using other Gmail clients or the Gmail UI to send.
-- OAuth scopes can’t prevent sending if `gmail.compose` is granted; this tool simply never calls send endpoints.
+- OAuth scopes can’t enforce “drafts-only” — `gmail.compose` inherently allows sending. This tool simply never calls send endpoints.
+- If another tool can access the same OAuth token, it could send. Protect the token file (`~/.config/gmail-no-send/token.json`) with filesystem permissions, or isolate it in a separate user account.
+- For stronger guarantees, wrap this tool behind a local proxy/service that holds the token and exposes only safe actions.
 
 ## License
 
