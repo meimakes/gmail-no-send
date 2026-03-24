@@ -1,5 +1,7 @@
 # gmail-no-send
 
+[![ClawHub](https://img.shields.io/badge/ClawHub-gmail--no--send-blue)](https://clawhub.ai/meimakes/gmail-no-send)
+
 A **drafts-only** Gmail client (CLI + library) designed for AI-agent safety. It supports **read, search, draft creation/update, and archiving** — **no send** code paths exist.
 
 Use this when you want to guarantee at the application layer that nothing can send emails, while still allowing drafts for human review.
